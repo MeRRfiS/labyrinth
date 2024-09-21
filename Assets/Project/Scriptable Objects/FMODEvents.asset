@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15141d26f90a3c64c9a47a8a161dd0ce, type: 3}
+  m_Name: FMODEvents
+  m_EditorClassIdentifier: 
+  <Cannon>k__BackingField:
+    Guid:
+      Data1: 2018256822
+      Data2: 1083087234
+      Data3: -1915863141
+      Data4: 37518211
+    Path: event:/SFX/Cannon
+  <Press>k__BackingField:
+    Guid:
+      Data1: 279736432
+      Data2: 1232912097
+      Data3: 1550953127
+      Data4: 1522208771
+    Path: event:/SFX/Press
+  <Walk>k__BackingField:
+    Guid:
+      Data1: -1527566053
+      Data2: 1117035846
+      Data3: 1585796240
+      Data4: -1580556776
+    Path: event:/SFX/Footstep
+  <Key>k__BackingField:
+    Guid:
+      Data1: 1968420079
+      Data2: 1271049225
+      Data3: 1214003842
+      Data4: 1990923215
+    Path: event:/SFX/Key
+  <Collect>k__BackingField:
+    Guid:
+      Data1: -862416313
+      Data2: 1198761844
+      Data3: 219471514
+      Data4: -1803868827
+    Path: event:/SFX/Collect
+  <Music>k__BackingField:
+    Guid:
+      Data1: 1137879066
+      Data2: 1166892231
+      Data3: 1593923743
+      Data4: 1933098168
+    Path: event:/Music/Music
