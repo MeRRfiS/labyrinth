@@ -4,6 +4,9 @@ using UnityEngine;
 
 namespace Labyrinth.Scripts.Traps
 {
+    /// <summary>
+    /// Class for press
+    /// </summary>
 	public class Press : Trap
 	{
         [Header("Press Fields")]
@@ -23,16 +26,25 @@ namespace Labyrinth.Scripts.Traps
             }
         }
 
+        /// <summary>
+        /// Method for animation event. Triggerd when press return to start position
+        /// </summary>
         public void OnActDisable()
         {
             _animator.SetBool(IsAct, false);
         }
 
+        /// <summary>
+        /// Method for animation event. Triggerd when animation is end
+        /// </summary>
         public void OnAnimationEnd()
         {
             _isAnimationEnd = true;
         }
 
+        /// <summary>
+        /// Method for animation event. Play sound when press worked
+        /// </summary>
         public void OnPlaySound()
         {
             _soundEvent = _audioManager.CreateInstance(_audioManager.FMODEvents.Press);

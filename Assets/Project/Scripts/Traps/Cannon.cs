@@ -4,6 +4,9 @@ using Zenject;
 
 namespace Labyrinth.Scripts.Traps
 {
+    /// <summary>
+    /// Class for cannon
+    /// </summary>
 	public class Cannon : Trap
 	{
         [Header("Cannon Fields")]

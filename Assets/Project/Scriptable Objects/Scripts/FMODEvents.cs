@@ -3,6 +3,9 @@ using UnityEngine;
 
 namespace Labyrinth.ScriptableObjects
 {
+    /// <summary>
+    /// Scriptable object that stores all FMOD Events
+    /// </summary>
     [CreateAssetMenu(fileName = "FMODEvents", menuName = "Scriptable Objects/Fmod Events")]
     public class FMODEvents : ScriptableObject
     {

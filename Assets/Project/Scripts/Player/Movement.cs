@@ -6,6 +6,9 @@ using Zenject;
 
 namespace Labyrinth.Scripts.Player
 {
+    /// <summary>
+    /// Controls player movement and manages footstep sounds using FMOD
+    /// </summary>
     [RequireComponent(typeof(CharacterController))]
 	public class Movement : MonoBehaviour
 	{
@@ -21,6 +24,9 @@ namespace Labyrinth.Scripts.Player
         private IAudioManager _audioManager;
         private IGameManager _gameManager;
 
+        /// <summary>
+        /// Stops the footstep sound immediately
+        /// </summary>
         private void StopWalkSound() => _walk.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
 
         [Inject]
@@ -30,7 +36,7 @@ namespace Labyrinth.Scripts.Player
             _audioManager = audioManager;
             _gameManager = gameManager;
 
-            _gameManager.OnPlayerDead += StopWalkSound;
+            _gameManager.OnLose += StopWalkSound;
             _gameManager.OnWin += StopWalkSound;
         }
 
@@ -42,6 +48,9 @@ namespace Labyrinth.Scripts.Player
             _walk.set3DAttributes(RuntimeUtils.To3DAttributes(gameObject));
         }
 
+        /// <summary>
+        /// Applies movement to the character based on input values
+        /// </summary>
         public void ApplyMovement(Vector2 value, bool isRunning)
         {
             UpdateSound(isRunning);
@@ -53,6 +62,9 @@ namespace Labyrinth.Scripts.Player
             _chController.Move(direction * Time.deltaTime);
         }
 
+        /// <summary>
+        /// Updates the footstep sound based on the player's movement state (running or walking)
+        /// </summary>
         private void UpdateSound(bool isRunning)
         {
             if(_chController.velocity.x != 0 || _chController.velocity.z != 0)
@@ -84,7 +96,7 @@ namespace Labyrinth.Scripts.Player
         private void OnDestroy()
         {
             StopWalkSound();
-            _gameManager.OnPlayerDead -= StopWalkSound; 
+            _gameManager.OnLose -= StopWalkSound; 
             _gameManager.OnWin -= StopWalkSound;
         }
     } 

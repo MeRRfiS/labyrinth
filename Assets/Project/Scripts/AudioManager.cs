@@ -7,6 +7,9 @@ using UnityEngine;
 
 namespace Labyrinth.Scripts
 {
+    /// <summary>
+    /// Manager for audio in the game using FMOD
+    /// </summary>
     public class AudioManager : MonoBehaviour, IAudioManager
     {
         [field: SerializeField] public FMODEvents FMODEvents { get; private set; }

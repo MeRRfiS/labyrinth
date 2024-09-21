@@ -3,6 +3,9 @@ using UnityEngine.UI;
 
 namespace Labyrinth.Scripts.UI
 {
+    /// <summary>
+    /// Window that contain information about win game
+    /// </summary>
     public class WinMenu : UIMenu
     {
         [SerializeField] private Button _resetButton;
@@ -14,14 +17,18 @@ namespace Labyrinth.Scripts.UI
             gameObject.SetActive(false);
         }
 
-        private void OnEnable()
+        protected override void OnEnable()
         {
+            base.OnEnable();
+
             _resetButton.onClick.AddListener(OnResetGame);
             _quitButton.onClick.AddListener(OnQuit);
         }
 
-        private void OnDisable()
+        protected override void OnDisable()
         {
+            base.OnDisable();
+
             _resetButton.onClick.RemoveListener(OnResetGame);
             _quitButton.onClick.RemoveListener(OnQuit);
         }

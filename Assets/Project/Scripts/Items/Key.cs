@@ -1,11 +1,12 @@
 using FMOD.Studio;
 using FMODUnity;
-using Labyrinth.Scripts.Interfaces;
 using UnityEngine;
-using Zenject;
 
 namespace Labyrinth.Scripts.Items
 {
+    /// <summary>
+    /// Key which need for open the door
+    /// </summary>
 	public class Key : Item
     {
         private EventInstance _keySound;

@@ -4,6 +4,10 @@ using Zenject;
 
 namespace Labyrinth.Scripts.Items
 {
+
+    /// <summary>
+    /// Base class for items
+    /// </summary>
 	public class Item : MonoBehaviour
 	{
         protected IGameManager _gameManager;
@@ -11,6 +15,9 @@ namespace Labyrinth.Scripts.Items
 
         private const string Player = "Player";
 
+        /// <summary>
+        /// Check tag of object that enter to collider
+        /// </summary>
         protected bool IsPlayer(Collider collider) => collider.tag == Player;
 
         [Inject]

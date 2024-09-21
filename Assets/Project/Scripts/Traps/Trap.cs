@@ -5,6 +5,9 @@ using Zenject;
 
 namespace Labyrinth.Scripts.Traps
 {
+    /// <summary>
+    /// Base class for traps
+    /// </summary>
 	public class Trap : MonoBehaviour
 	{
 		[SerializeField] private int _activateTime = 10;
@@ -29,6 +32,9 @@ namespace Labyrinth.Scripts.Traps
             }
         }
 
+        /// <summary>
+        /// Activates the trap once in a while
+        /// </summary>
         protected virtual void Act() { }
     } 
 }

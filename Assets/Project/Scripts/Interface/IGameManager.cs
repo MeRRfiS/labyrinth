@@ -1,19 +1,45 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Labyrinth.Scripts.Interfaces
 {
+    /// <summary>
+    /// Interface for managing game events and player state
+    /// </summary>
     public interface IGameManager
     {
-        public event Action OnPlayerDead;
+        /// <summary>
+        /// Event triggerd when player loses the game
+        /// </summary>
+        public event Action OnLose;
+
+        /// <summary>
+        /// Event triggerd when player wins the game
+        /// </summary>
         public event Action OnWin;
+
+        /// <summary>
+        /// Event triggerd to update the timer
+        /// </summary>
         public event Action<int> OnTimerUpdate;
+
+        /// <summary>
+        /// Event triggerd to update count collected key
+        /// </summary>
         public event Action<int, int> OnKeyValueUpdate;
+
+        /// <summary>
+        /// Add a key to counter
+        /// </summary>
         public void AddKey();
-        public void KillPlayer();
+
+        /// <summary>
+        /// Handles player lose
+        /// </summary>
+        public void LoseGame();
+
+        /// <summary>
+        /// Handles player win
+        /// </summary>
         public void WinGame();
     }
 }
